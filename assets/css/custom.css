@@ -18,3 +18,11 @@ blockquote {
 }
 
 img { background: transparent !important; }
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #383838;
+    background-color: #f8f5ed;
+}
