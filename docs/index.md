@@ -21,8 +21,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/daviguides/semantic-docstr
 
 ## Read the Docs
 
-- [Full Specification](./semantic_docstrings.md)
-- [Why Semantic Docstrings?](./why_semantic_docstrings.md)
+- [Full Specification](/semantic-docstrings/semantic_docstrings.md)
+- [Why Semantic Docstrings?](/semantic-docstrings/why_semantic_docstrings.md)
 
 ## Quick Start (Claude Code)
 
