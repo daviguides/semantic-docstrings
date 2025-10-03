@@ -38,30 +38,6 @@ The installer will:
 3. Optionally configure `~/.claude/CLAUDE.md`
 4. Clean up temporary files automatically
 
-### Manual Installation
-
-```bash
-git clone https://github.com/daviguides/semantic-docstrings.git
-cd semantic-docstrings
-
-# Copy plugin files
-mkdir -p ~/.claude
-cp -r semantic-docstrings ~/.claude/
-
-# Add to ~/.claude/CLAUDE.md
-cat >> ~/.claude/CLAUDE.md << 'EOF'
-
-# Project Documentation Standards
-
-## Standards Inheritance
-- **INHERITS FROM**: @./semantic-docstrings/semantic-docstrings/semantic_docstrings.md
-- **PRECEDENCE**: Project-specific rules override repository defaults
-- **FALLBACK**: When no override exists, semantic-docstrings applies
-EOF
-```
-
----
-
 ## Usage
 
 ### As a Specification
@@ -89,6 +65,7 @@ def process_message(payload: dict) -> str:
     """
 ```
 
+See [docs/why_semantic_docstrings.md](./docs/why_semantic_docstrings.md) Why Semantic Docstrings.
 See [semantic-docstrings/semantic_docstrings.md](./semantic-docstrings/semantic_docstrings.md) for the full specification.
 See [cheatsheet/semantic_docstrings_cheatsheet.md](./cheatsheet/semantic_docstrings_cheatsheet.md) for quick reference.
 
@@ -114,6 +91,28 @@ Once installed, you can reference Semantic Docstrings globally in your `CLAUDE.m
 - ✅ Defines **boundaries** and **roles** explicitly
 - ✅ Improves onboarding, code review, and LLM/code-assistant comprehension
 - ✅ Works seamlessly as a Claude Code plugin
+
+### Manual Installation
+
+```bash
+git clone https://github.com/daviguides/semantic-docstrings.git
+cd semantic-docstrings
+
+# Copy plugin files
+mkdir -p ~/.claude
+cp -r semantic-docstrings ~/.claude/
+
+# Add to ~/.claude/CLAUDE.md
+cat >> ~/.claude/CLAUDE.md << 'EOF'
+
+# Project Documentation Standards
+
+## Standards Inheritance
+- **INHERITS FROM**: @./semantic-docstrings/semantic-docstrings/semantic_docstrings.md
+- **PRECEDENCE**: Project-specific rules override repository defaults
+- **FALLBACK**: When no override exists, semantic-docstrings applies
+EOF
+```
 
 ---
 
