@@ -1,23 +1,15 @@
 ---
 layout: home
-title: Home
+title: Semantic Docstrings
 ---
 
-<img src="./assets/images/semantic-docstrings-banner.png" alt="Principles Diagram" align="right" style="width: 400px;background-color:#f2f0e9;border-radius: 1rem;box-shadow: 0 0 8px rgba(0, 0, 0, 0.04);margin-left:10px;"/>
+# Semantic Docstrings
 
 Semantic Docstrings add a semantic layer to Python documentation:
 - Reveal why code exists (not just what it does).
 - Make responsibility, context, role, and boundaries explicit.
 - Improve developer onboarding, code review, refactoring safety.
 - Enhance LLM/code assistant reasoning with higher information density.
-
-## Quick Start
-
-### One-Line Installation (Claude Code Plugin)
-
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/daviguides/semantic-docstrings/main/install.sh)"
-```
 
 ## Read the Docs
 

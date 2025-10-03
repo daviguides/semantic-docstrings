@@ -1,0 +1,20 @@
+---
+---
+
+// Import Minima's default styles
+@import "minima";
+
+// Subtle palette alignment
+:root {
+  --stroke: #3d4b42;
+  --accent: #59757d;
+  --light: #d7d2c8;
+  --soft: #c1cfd8;
+}
+
+a { color: var(--accent); }
+blockquote {
+  border-left: 4px solid var(--soft);
+  padding-left: 1rem;
+  color: var(--stroke);
+}

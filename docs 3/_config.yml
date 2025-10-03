@@ -1,0 +1,8 @@
+title: Semantic Docstrings
+description: A semantic documentation standard for Python that captures Responsibility, Context, Role, and Boundaries.
+theme: minima
+baseurl: ""
+url: ""
+markdown: kramdown
+kramdown:
+  input: GFM
