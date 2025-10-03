@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"><link rel="stylesheet" href="/assets/css/custom.css"><body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Semantic Docstrings</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/">Semantic Docstrings</a><a class="page-link" href="/semantic_docstrings.html">Full Specification</a><a class="page-link" href="/why_semantic_docstrings.html">Why Semantic Docstrings</a><a class="page-link" href="/semantic_docstrings_body.html">DOCUMENTATION AS A SEMANTIC LAYER</a><a class="page-link" href="/why_semantic_docstrings_body.html">Why Semantic Docstrings?</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="home"><h1 class="page-heading">Semantic Docstrings</h1><h1 id="semantic-docstrings">Semantic Docstrings</h1>
+
+<p>Semantic Docstrings add a semantic layer to Python documentation:</p>
+<ul>
+  <li>Reveal why code exists (not just what it does).</li>
+  <li>Make responsibility, context, role, and boundaries explicit.</li>
+  <li>Improve developer onboarding, code review, refactoring safety.</li>
+  <li>Enhance LLM/code assistant reasoning with higher information density.</li>
+</ul>
+
+<h2 id="read-the-docs">Read the Docs</h2>
+
+<ul>
+  <li><a href="/semantic_docstrings.html">Full Specification</a></li>
+  <li><a href="/why_semantic_docstrings.html">Why Semantic Docstrings?</a></li>
+</ul>
+
+<h2 id="quick-start-claude-code">Quick Start (Claude Code)</h2>
+
+<p>Add this to <code class="language-plaintext highlighter-rouge">~/.claude/CLAUDE.md</code>:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># Project Documentation Standards</span>
+
+<span class="gu">## Standards Inheritance</span>
+<span class="p">-</span> <span class="gs">**INHERITS FROM**</span>: @./semantic-docstrings/docs/semantic_docstrings.md
+<span class="p">-</span> <span class="gs">**PRECEDENCE**</span>: Project-specific rules override repository defaults
+<span class="p">-</span> <span class="gs">**FALLBACK**</span>: When no override exists, semantic-docstrings applies
+</code></pre></div></div>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Semantic Docstrings</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Semantic Docstrings</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>A semantic documentation standard for Python that captures Responsibility, Context, Role, and Boundaries.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
