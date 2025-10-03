@@ -6,6 +6,12 @@ theme: minima
 remote_theme: "jekyll/minima@1e8a445"
 
 baseurl: "/semantic-docstrings"
+repository: daviguides/semantic-docstrings
+
+# Minima social links
+github_username: daviguides
+linkedin_username: daviguides
+
 
 markdown: kramdown
 kramdown:
