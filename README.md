@@ -18,8 +18,8 @@ that capture **why code exists**, not just *what it does*.
 
 This repository serves a **dual purpose**:
 
-- 📖 **Specification**: Readable guides and examples for adopting Semantic Docstrings in your projects.
-- 🔌 **Claude Code Plugin**: Installable into Claude Code to encourage, enforce and autocomplete this documentation style.
+- **Specification**: Readable guides and examples for adopting Semantic Docstrings in your projects.
+- **Claude Code Plugin**: Installable into Claude Code to encourage, enforce and autocomplete this documentation style.
 
 ---
 
@@ -39,6 +39,10 @@ The installer will:
 4. Clean up temporary files automatically
 
 ## Usage
+
+- See [Why Semantic Docstrings?](./docs/why_semantic_docstrings.md)
+- See [Full Specification](./semantic-docstrings/semantic_docstrings.md)
+- See [Quick Reference](./cheatsheet/semantic_docstrings_cheatsheet.md)
 
 ### As a Specification
 
@@ -64,10 +68,6 @@ def process_message(payload: dict) -> str:
         ValueError: If `text` key is missing.
     """
 ```
-
-See [docs/why_semantic_docstrings.md](./docs/why_semantic_docstrings.md) Why Semantic Docstrings.
-See [semantic-docstrings/semantic_docstrings.md](./semantic-docstrings/semantic_docstrings.md) for the full specification.
-See [cheatsheet/semantic_docstrings_cheatsheet.md](./cheatsheet/semantic_docstrings_cheatsheet.md) for quick reference.
 
 ### As a Claude Code Plugin
 
