@@ -1,9 +1,12 @@
 title: Semantic Docstrings
 description: A semantic documentation standard for Python that captures Responsibility, Context, Role, and Boundaries.
+author: "Davi Guides"
+
 theme: minima
 remote_theme: "jekyll/minima@1e8a445"
-baseurl: ""
-url: ""
+
+baseurl: "/semantic-docstrings"
+
 markdown: kramdown
 kramdown:
   input: GFM
