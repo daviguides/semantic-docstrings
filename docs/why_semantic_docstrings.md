@@ -2,54 +2,58 @@
 
 ## 1. Syntax and Semantics
 
-Traditional Python docstrings often repeat information that is already visible in the function signature or type hints. They tell *what* a function does, but not *why* it exists or how it should be used.  
-Syntax alone expresses structure: arguments, types, and return values.  
-Semantics express purpose: responsibility, context, and intention.  
+<img src="./../images/what-why.png" alt="What/Why Diagram" align="right" style="width: 500px"/>
 
-For example, a function annotated with type hints shows that it accepts a `User` object and a `Decimal`, returning another `Decimal`. But it does not explain why these values are needed, how they should be interpreted, or what constraints apply. A semantic docstring complements syntax by capturing this meaning.  
+Traditional Python docstrings often repeat what the signature or type hints show. They explain *what* a function does, but not *why* or *how* to use it.  
+
+- Syntax shows structure: arguments, types, returns.  
+- Semantics show purpose: responsibility, context, intention.  
+
+For example, type hints show a function takes a `User` and a `Decimal`, returning a `Decimal`.
+
+They don’t explain why these inputs matter or what constraints apply. Semantic docstrings fill that gap.
 
 ## 2. Benefits for Developers
 
-Semantic docstrings improve the human development workflow in several ways. They accelerate onboarding by making architectural roles and responsibilities explicit, so a new contributor can understand not only the implementation but also its purpose.  
-
-They also enhance code reviews by shifting the discussion from *how the code is written* to *whether the code respects its defined responsibility and boundaries*.  
-Refactoring becomes safer because semantic docstrings preserve intent: even if implementation details change, the documentation continues to record the original purpose and constraints.  
-
-Finally, semantic docstrings reduce the need for separate design documentation. Since the architectural context, responsibilities, and boundaries are included close to the code, knowledge remains synchronized and accessible.  
+Semantic docstrings improve workflows by:  
+- Speeding onboarding with clear roles and responsibilities.  
+- Shifting code reviews to focus on intent, not just code style.  
+- Making refactoring safer by preserving original purpose.  
+- Reducing the need for separate design docs, keeping knowledge close to code.
 
 ## 3. Benefits for LLMs and Code Assistants
 
-The adoption of semantic docstrings becomes even more relevant in an environment where large language models (LLMs) and code assistants participate in the development process.  
-
-LLMs rely heavily on contextual information. While syntax gives structural cues, semantic docstrings provide anchoring: they state the purpose of a function or class before the model starts reasoning about implementation.  
-This reduces ambiguity, preventing the model from making incorrect assumptions during refactoring or bug fixing.  
-
-It also improves code completions. With clear documentation about responsibility, context, and boundaries, the model can generate suggestions aligned with architectural intent rather than generic patterns.  
-Another key factor is information efficiency: high-quality semantic descriptions provide more meaning per token, optimizing limited context windows and making AI-assisted development more effective.  
+Semantic docstrings boost AI-assisted development:  
+- Provide context and purpose before implementation details.  
+- Reduce ambiguity and incorrect assumptions.  
+- Improve code completions aligned with architectural intent.  
+- Increase information density, optimizing AI context windows.
 
 ## 4. Documentation Quality Threshold
 
-Research shows that the effect of documentation on LLM performance is not linear.  
-High-quality documentation can improve task accuracy by 20–50 percent.  
-Incorrect or misleading documentation, however, is more harmful than having no documentation at all, often leading to performance degradation greater than 60 percent.  
+Documentation impact on AI is not linear:  
+- High-quality docs improve accuracy by 20–50%.  
+- Poor or misleading docs hurt performance more than no docs, sometimes over 60%.  
 
-This asymmetry indicates the existence of a quality threshold. Teams should therefore prioritize accuracy and clarity over coverage. It is better to document fewer functions well than to spread incomplete or misleading information across the entire codebase.  
+Focus on accuracy and clarity over quantity. Better to document fewer functions well than many poorly.
 
 ## 5. Principles of Semantic Docstrings
 
-Semantic docstrings follow several guiding principles:  
+<img src="./../images/principles.png" alt="Principles Diagram" align="right" style="width: 500px"/>
 
-- **Responsibility**: Each module, class, or function should have a clearly defined responsibility that is explicitly documented.  
-- **Context**: Arguments and return values should include information about their origin, meaning, and constraints.  
-- **Boundaries**: The documentation should describe what the component does not do, making delegation and scope explicit.  
-- **Role**: For classes and modules, the documentation should state their role within the system architecture.  
+Key principles:  
+- **Responsibility**: Define clear responsibilities.  
+- **Context**: Explain origin, meaning, constraints of inputs and outputs.  
+- **Boundaries**: State what the component does *not* do.  
+- **Role**: Clarify the system role of classes and modules.  
 
-These principles ensure that documentation captures the architectural and semantic meaning of the code, not just its implementation details.  
+These ensure docs capture architectural and semantic meaning, not just code details.
 
 ## 6. Why Now?
 
-The importance of semantic docstrings increases in the current landscape of AI-assisted development.  
-Benchmarks such as HumanEval already integrate natural language as a core part of evaluating AI comprehension. The effectiveness of these benchmarks, and of AI systems in general, depends directly on the clarity of documentation.  
+AI-assisted development demands clear documentation.  
+- Benchmarks like HumanEval rely on natural language clarity.  
+- Semantic docstrings create a shared layer for humans and AI.  
+- They enable reasoning about *why* code exists, not just *how*.  
 
-Semantic docstrings transform documentation into a semantic layer that supports collaboration between human developers and AI systems. They allow both to reason not only about how code works but also about why it exists.  
-In this sense, adopting semantic docstrings is not only a matter of improving readability for developers but also a way to prepare codebases for effective collaboration with intelligent assistants.  
+Adopting semantic docstrings improves readability and preps code for AI collaboration.
