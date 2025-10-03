@@ -1,26 +1,26 @@
-# 6. DOCUMENTAÇÃO COMO CAMADA SEMÂNTICA
+# DOCUMENTATION AS A SEMANTIC LAYER
 **Zen: "Readability counts"**
 
-### Essência
-Docstrings adicionam **camada de significado** que a sintaxe pura não expressa. Explicam **Responsibility, Context e Intention** — não apenas implementação.
+### Essence
+Docstrings add a **layer of meaning** that pure syntax does not express. They explain **Responsibility, Context, and Intention** — not just implementation.
 
-> **Insight crítico:** Docstrings não servem apenas ao novo desenvolvedor, mas adicionam uma **camada semântica** que transcende a sintaxe.  
-> Código sem docstrings diz *"O QUÊ"*, código com docstrings diz *"POR QUÊ"*.
+> **Critical insight:** Docstrings are not only for the new developer, but add a **semantic layer** that transcends syntax.  
+> Code without docstrings says *"WHAT"*, code with docstrings says *"WHY"*.
 
 ---
 
-### O que a Sintaxe NÃO Expressa
+### What Syntax DOES NOT Express
 
-#### Exemplo: Função
+#### Example: Function
 ```python
-# ❌ APENAS SINTAXE (sem significado)
+# ❌ ONLY SYNTAX (no meaning)
 def calculate_discount(user: User, amount: Decimal) -> Decimal:
     ...
 ```
-**Sintaxe diz:** "Recebe User e Decimal, retorna Decimal"
+**Syntax says:** "Receives User and Decimal, returns Decimal"
 
 ```python
-# ✅ SINTAXE + SEMÂNTICA (com significado)
+# ✅ SYNTAX + SEMANTICS (with meaning)
 def calculate_discount(user: User, amount: Decimal) -> Decimal:
     """Calculate discount based on user loyalty and purchase volume.
 
@@ -34,21 +34,21 @@ def calculate_discount(user: User, amount: Decimal) -> Decimal:
     ...
 ```
 
-**Semântica adiciona:**
-- **POR QUÊ** user existe (loyalty tier)  
-- **POR QUÊ** amount existe (volume calculation)  
-- **POR QUÊ** retorna Decimal (capped discount)  
+**Semantics add:**
+- **WHY** user exists (loyalty tier)  
+- **WHY** amount exists (volume calculation)  
+- **WHY** returns Decimal (capped discount)  
 
 ---
 
-### Níveis de Significado
+### Levels of Meaning
 
-#### **Módulos: Papel Arquitetural**
+#### **Modules: Architectural Role**
 ```python
-# ❌ REPETE SINTAXE
+# ❌ REPEATS SYNTAX
 """Workflow module."""
 
-# ✅ ADICIONA SIGNIFICADO ARQUITETURAL
+# ✅ ADDS ARCHITECTURAL MEANING
 """
 This module orchestrates the conversational flow for debt negotiation.
 
@@ -75,22 +75,22 @@ Entry:
 """
 ```
 
-**Semântica explica:**
-- **POR QUÊ** módulo existe ("orchestrator")  
-- **QUAL** seu papel na arquitetura  
-- **FRONTEIRAS** conceituais (Should vs Boundaries)  
-- **Entry**: pontos de entrada públicos  
+**Semantics explain:**
+- **WHY** the module exists ("orchestrator")  
+- **WHAT** its role in the architecture is  
+- **Conceptual BOUNDARIES** (Should vs Boundaries)  
+- **Entry**: public entry points  
 
 ---
 
-#### **Funções: Contexto e Intenção**
+#### **Functions: Context and Intention**
 ```python
-# ❌ REPETE SINTAXE
+# ❌ REPEATS SYNTAX
 def _validate_and_extract_payload(payload: dict) -> tuple[str, str | None, str | None]:
     """Validates payload and extracts data."""
     ...
 
-# ✅ ADICIONA CONTEXTO E INTENÇÃO
+# ✅ ADDS CONTEXT AND INTENTION
 def _validate_and_extract_payload(
     payload: dict,
 ) -> tuple[str, str | None, str | None]:
@@ -121,21 +121,21 @@ def _validate_and_extract_payload(
     ...
 ```
 
-**Semântica adiciona:**
-- **Responsibility**: contrato arquitetural ("first line of defense")  
-- **Context**: origem e confiança dos dados  
-- **Returns**: significado semântico do retorno  
-- **Raises**: intenção de uso das exceções  
+**Semantics add:**
+- **Responsibility**: architectural contract ("first line of defense")  
+- **Context**: data origin and trust  
+- **Returns**: semantic meaning of the return  
+- **Raises**: intention of exception use  
 
 ---
 
-#### **Classes: Fronteiras e Papel no Sistema**
+#### **Classes: Boundaries and Role in the System**
 ```python
-# ❌ APENAS SINTAXE
+# ❌ ONLY SYNTAX
 class IdentificationAgent:
     """Agent for user identification."""
 
-# ✅ CAMADA SEMÂNTICA
+# ✅ SEMANTIC LAYER
 class IdentificationAgent:
     """
     Manages user identification state and conversation flow.
@@ -155,14 +155,14 @@ class IdentificationAgent:
     """
 ```
 
-**Semântica explica:**
-- **Responsibility**: SRP (estado de identificação)  
-- **Boundaries**: limitações claras (não faz lógica de negócio)  
-- **Role**: papel arquitetural ("state manager")  
+**Semantics explain:**
+- **Responsibility**: SRP (identification state)  
+- **Boundaries**: clear limitations (does not do business logic)  
+- **Role**: architectural role ("state manager")  
 
 ---
 
-### Padrão Aplicado: Estrutura Completa
+### Applied Pattern: Complete Structure
 
 ```python
 """
@@ -234,57 +234,57 @@ def public_function(arg1: str, arg2: int) -> bool:
 
 ---
 
-### Por Quê Isso Importa?
+### Why Does This Matter?
 
-#### 1. **Sintaxe → O QUÊ | Semântica → POR QUÊ**
+#### 1. **Syntax → WHAT | Semantics → WHY**
 ```python
-# Sintaxe diz O QUÊ:
+# Syntax says WHAT:
 user: User, amount: Decimal -> Decimal
 
-# Semântica diz POR QUÊ:
+# Semantics says WHY:
 user: "for loyalty tier determination"
 amount: "for volume-based calculation"
 return: "final discount with cap"
 ```
 
-#### 2. **Código Muda, Significado Permanece**
-- Refatoração pode mudar implementação  
-- Docstring preserva **intenção** e **responsabilidade**  
-- Novo desenvolvedor (ou LLM) entende **conceito**, não apenas código  
+#### 2. **Code Changes, Meaning Remains**
+- Refactoring may change implementation  
+- Docstring preserves **intention** and **responsibility**  
+- New developer (or LLM) understands **concept**, not just code  
 
-#### 3. **Previne Acoplamento Semântico**
+#### 3. **Prevents Semantic Coupling**
 ```python
 """
 Boundaries:
     - Manage MCP connections (delegated to execution helpers)
 """
 ```
-→ Define fronteiras conceituais, não apenas técnicas  
+→ Defines conceptual boundaries, not just technical ones  
 
-#### 4. **LLMs/Ferramentas Entendem Intenção**
-- IDE autocomplete mostra **contexto**, não apenas tipo  
-- Code review foca em **violação de responsabilidade**  
-- LLMs geram código alinhado com **arquitetura**  
-
----
-
-### Comparação: Sintaxe vs Semântica
-
-| Aspecto       | Apenas Sintaxe | Com Camada Semântica |
-|---------------|----------------|----------------------|
-| **Módulo**    | Nome do arquivo | POR QUÊ existe, QUAL responsabilidade |
-| **Função**    | Assinatura (tipos) | CONTEXTO dos args, INTENÇÃO do retorno |
-| **Classe**    | Atributos/métodos | FRONTEIRAS, PAPEL no sistema |
-| **Argumentos**| `user: User` | "User account for loyalty tier determination" |
-| **Retorno**   | `-> Decimal` | "Final discount amount, capped at maximum" |
-| **Exceção**   | `raises ValueError` | "If text missing - caller MUST handle" |
+#### 4. **LLMs/Tools Understand Intention**
+- IDE autocomplete shows **context**, not just type  
+- Code review focuses on **responsibility violation**  
+- LLMs generate code aligned with **architecture**  
 
 ---
 
-### Por Quê?
-- ✅ Adiciona significado que sintaxe não expressa  
-- ✅ Preserva intenção mesmo com refatoração  
-- ✅ Define fronteiras conceituais, não apenas técnicas  
-- ✅ Código auto-explicativo em nível arquitetural  
-- ✅ Reduz necessidade de documentação externa  
-- ✅ Facilita onboarding, code review e uso por LLMs  
+### Comparison: Syntax vs Semantics
+
+| Aspect       | Syntax Only | With Semantic Layer |
+|--------------|-------------|---------------------|
+| **Module**   | Filename    | WHY it exists, WHAT responsibility |
+| **Function** | Signature (types) | CONTEXT of args, INTENTION of return |
+| **Class**    | Attributes/methods | BOUNDARIES, ROLE in system |
+| **Arguments**| `user: User` | "User account for loyalty tier determination" |
+| **Return**   | `-> Decimal` | "Final discount amount, capped at maximum" |
+| **Exception**| `raises ValueError` | "If text missing - caller MUST handle" |
+
+---
+
+### Why?
+- ✅ Adds meaning that syntax does not express  
+- ✅ Preserves intention even with refactoring  
+- ✅ Defines conceptual boundaries, not just technical ones  
+- ✅ Self-explanatory code at architectural level  
+- ✅ Reduces need for external documentation  
+- ✅ Facilitates onboarding, code review, and use by LLMs  

@@ -54,7 +54,7 @@ cat >> ~/.claude/CLAUDE.md << 'EOF'
 # Project Documentation Standards
 
 ## Standards Inheritance
-- **INHERITS FROM**: @./semantic-docstrings/docs/semantic_docstrings.md
+- **INHERITS FROM**: @./semantic-docstrings/semantic-docstrings/semantic_docstrings.md
 - **PRECEDENCE**: Project-specific rules override repository defaults
 - **FALLBACK**: When no override exists, semantic-docstrings applies
 EOF
@@ -89,7 +89,7 @@ def process_message(payload: dict) -> str:
     """
 ```
 
-See [docs/semantic_docstrings.md](./docs/semantic_docstrings.md) for the full specification.
+See [semantic-docstrings/semantic_docstrings.md](./semantic-docstrings/semantic_docstrings.md) for the full specification.
 See [cheatsheet/semantic_docstrings_cheatsheet.md](./cheatsheet/semantic_docstrings_cheatsheet.md) for quick reference.
 
 ### As a Claude Code Plugin
@@ -100,30 +100,9 @@ Once installed, you can reference Semantic Docstrings globally in your `CLAUDE.m
 # Project Documentation Standards
 
 ## Standards Inheritance
-- **INHERITS FROM**: @./semantic-docstrings/docs/semantic_docstrings.md
+- **INHERITS FROM**: @./semantic-docstrings/semantic_docstrings.md
 - **PRECEDENCE**: Project overrides semantic-docstrings
 - **FALLBACK**: Use semantic-docstrings when no overrides exist
-```
-
----
-
-## Structure
-
-```
-semantic-docstrings/
-├── docs/
-│   └── semantic_docstrings.md         # Full specification
-├── cheatsheet/
-│   └── semantic_docstrings_cheatsheet.md
-├── examples/
-│   ├── module_example.py
-│   ├── class_example.py
-│   └── function_example.py
-├── images/
-│   └── semantic-docstrings-banner.svg
-├── install.sh                         # Installer for Claude Code
-├── LICENSE
-└── README.md
 ```
 
 ---
@@ -156,4 +135,4 @@ MIT License - See [LICENSE](./LICENSE) for details
 
 ## Author
 
-Created and maintained by Davi Guides — bridging **readability**, **architecture**, and **LLM-aware coding**.
+Built with ❤️ by [Davi Luiz Guides](http://daviguides.github.io) - bridging **readability**, **architecture**, and **LLM-aware coding**.
