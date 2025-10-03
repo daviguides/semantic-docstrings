@@ -4,7 +4,7 @@ author: "Davi Guides"
 
 theme: minima
 
-baseurl: "/semantic-docstrings"
+# baseurl: "/semantic-docstrings"
 repository: daviguides/semantic-docstrings
 
 # Minima social links

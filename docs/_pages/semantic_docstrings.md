@@ -352,6 +352,8 @@ Documentation rich in semantics feeds the development ecosystem. An IDE's autoco
 
 -----
 
-### Why?
+## def in(short) -> Semantic Docstrings:
 
-In summary, adopting semantic docstrings is a powerful practice because it adds meaning that syntax does not express and preserves the code's intent even after refactoring. It defines conceptual boundaries, making the code self-explanatory at an architectural level, which reduces dependency on external documentation. Finally, it facilitates the onboarding of new team members, streamlines code reviews, and dramatically enhances collaboration with AI assistants.
+* **Preserves Intent & Meaning:** It documents the strategic "why" of the code, not just the mechanical "what." This core meaning survives refactoring, unlike implementation details.
+* **Creates Architectural Clarity:** It defines clear conceptual boundaries for each component, making the system self-explanatory and reducing the need for external documentation.
+* **Accelerates Collaboration:** It speeds up onboarding for new developers, focuses code reviews on design principles, and dramatically improves the context for AI assistants (LLMs).
