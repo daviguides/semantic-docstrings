@@ -3,6 +3,11 @@ layout: page
 title: Full Specification
 ---
 
+### TL;DR:
+* **What it is:** An **extension** of Google Style that adds the **"why"** (purpose, context) to the existing **"what"** (parameters, returns).
+* **How it works:** It adds **keywords** like `Responsibility`, `Architecture`, and `Boundaries` to define the code's strategic role in the system.
+* **Why it matters:** The result is code that's **easier to maintain**, has clear architectural boundaries, and is better understood by both **developers and LLMs**.
+
 ### Semantic Docstrings: Writing Code That Explains the 'Why'
 
 **The Zen of Python reminds us: "Readability counts."**
