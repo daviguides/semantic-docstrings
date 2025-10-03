@@ -3,7 +3,7 @@ layout: home
 title: Home
 ---
 
-<img src="./assets/images/semantic-docstrings-banner.png" alt="Principles Diagram" align="right" style="width: 400px;background-color:#f2f0e9;border-radius: 1rem;box-shadow: 0 0 8px rgba(0, 0, 0, 0.04);margin-left:10px;"/>
+<img src="./assets/images/semantic-docstrings-banner.png" alt="Principles Diagram" align="right" style="width: 400px;background-color:#f2f0e9;border-radius: 1rem;margin-left:10px;"/>
 
 Semantic Docstrings add a semantic layer to Python documentation:
 - Reveal why code exists (not just what it does).
@@ -21,8 +21,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/daviguides/semantic-docstr
 
 ## Read the Docs
 
-- [Full Specification](/semantic-docstrings/semantic_docstrings.md)
-- [Why Semantic Docstrings?](/semantic-docstrings/why_semantic_docstrings.md)
+- [Full Specification](/semantic-docstrings/semantic_docstrings.html)
+- [Why Semantic Docstrings?](/semantic-docstrings/why_semantic_docstrings.html)
 
 ## Quick Start (Claude Code)
 
