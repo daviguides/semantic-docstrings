@@ -780,4 +780,36 @@ img {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
 }
 
+.highlighter-rouge div.highlight {
+  background-color: unset;
+}
+
+.highlighter-rouge .highlight {
+  background-color: #d2cfc7;
+}
+
+code {
+  background-color: #d2cfc7;
+}
+
+.highlight .c1 {
+  color: #5a655d;
+}
+
+pre.highlight {
+  font-family: "Fira Code", "Courier New", Courier, monospace;
+  width: 80%;
+  padding: 1.5rem 2.5rem;
+  margin: 0 auto;
+  color: #3b453d;
+  font-weight: 400;
+  background-color: #d2cfc7;
+  border: 1px solid #d2cfc7;
+  border-radius: 0.75rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  overflow-x: auto;
+}
+
 /*# sourceMappingURL=style.css.map */
