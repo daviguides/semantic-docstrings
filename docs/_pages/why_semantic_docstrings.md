@@ -5,7 +5,7 @@ title: Why Semantic Docstrings
 
 ## 1. Syntax and Semantics
 
-<img src="./assets/images/what-why.png" alt="What/Why Diagram" align="right" style="width: 400px;background-color:#f2f0e9;border-radius: 1rem;margin-left:10px;"/>
+<img src="./../assets/images/what-why.png" alt="What/Why Diagram" align="right" style="width: 400px;background-color:#f2f0e9;border-radius: 1rem;margin-left:10px;"/>
 
 Traditional Python docstrings often repeat what the signature or type hints show. They explain *what* a function does, but not *why* or *how* to use it.  
 
@@ -42,7 +42,7 @@ Focus on accuracy and clarity over quantity. Better to document fewer functions 
 
 ## 5. Principles of Semantic Docstrings
 
-<img src="./assets/images/principles.png" alt="Principles Diagram" align="right" style="width: 400px;background-color:#f2f0e9;border-radius: 1rem;margin-left:10px;"/>
+<img src="./../assets/images/principles.png" alt="Principles Diagram" align="right" style="width: 400px;background-color:#f2f0e9;border-radius: 1rem;margin-left:10px;"/>
 
 Key principles:  
 - **Responsibility**: Define clear responsibilities.  
