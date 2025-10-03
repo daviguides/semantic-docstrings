@@ -3,7 +3,7 @@ layout: page
 title: Full Specification
 ---
 
-# DOCUMENTATION AS A SEMANTIC LAYER
+# Documentation as a Semantic Layer
 **Zen: "Readability counts"**
 
 ### Essence
