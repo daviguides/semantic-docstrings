@@ -1,13 +1,9 @@
 source "https://rubygems.org"
 
-# gem "jekyll"
-# gem "kramdown-parser-gfm"
-# 
-# gem "base64" 
-# gem "bigdecimal" 
-# gem "minima", github: "jekyll/minima", ref: "1e8a445"
-# gem "webrick", "~> 1.8"
+gem "jekyll"
+gem "kramdown-parser-gfm"
 
-gem 'github-pages', group: :jekyll_plugins
-
+gem "base64" 
+gem "bigdecimal" 
+gem "minima", github: "jekyll/minima", ref: "1e8a445"
 gem "webrick", "~> 1.8"

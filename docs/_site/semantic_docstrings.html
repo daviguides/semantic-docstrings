@@ -4,7 +4,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Full Specification | Semantic Docstrings</title>
-<meta name="generator" content="Jekyll v3.10.0" />
+<meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Full Specification" />
 <meta name="author" content="Davi Guides" />
 <meta property="og:locale" content="en_US" />
@@ -19,8 +19,10 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Davi Guides"},"description":"A semantic documentation standard for Python that captures Responsibility, Context, Role, and Boundaries.","headline":"Full Specification","url":"http://localhost:4000/semantic_docstrings.html"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Semantic Docstrings" /></head>
-<body><header class="site-header" role="banner">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Semantic Docstrings" />
+</head>
+<body><header class="site-header">
 
   <div class="wrapper"><a class="site-title" rel="author" href="/">Semantic Docstrings</a><nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
@@ -32,7 +34,7 @@
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/">Home</a><a class="page-link" href="/semantic_docstrings.html">Full Specification</a><a class="page-link" href="/why_semantic_docstrings.html">Why Semantic Docstrings</a></div>
+        <div class="trigger"></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -62,13 +64,13 @@ Code without docstrings says <em>“WHAT”</em>, code with docstrings says <em>
 <h4 id="example-function">Example: Function</h4>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ❌ ONLY SYNTAX (no meaning)
 </span><span class="k">def</span> <span class="nf">calculate_discount</span><span class="p">(</span><span class="n">user</span><span class="p">:</span> <span class="n">User</span><span class="p">,</span> <span class="n">amount</span><span class="p">:</span> <span class="n">Decimal</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Decimal</span><span class="p">:</span>
-    <span class="p">...</span>
+    <span class="bp">...</span>
 </code></pre></div></div>
 <p><strong>Syntax says:</strong> “Receives User and Decimal, returns Decimal”</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ✅ SYNTAX + SEMANTICS (with meaning)
 </span><span class="k">def</span> <span class="nf">calculate_discount</span><span class="p">(</span><span class="n">user</span><span class="p">:</span> <span class="n">User</span><span class="p">,</span> <span class="n">amount</span><span class="p">:</span> <span class="n">Decimal</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Decimal</span><span class="p">:</span>
-    <span class="s">"""Calculate discount based on user loyalty and purchase volume.
+    <span class="sh">"""</span><span class="s">Calculate discount based on user loyalty and purchase volume.
 
     Args:
         user: User account for loyalty tier determination
@@ -76,8 +78,8 @@ Code without docstrings says <em>“WHAT”</em>, code with docstrings says <em>
 
     Returns:
         Final discount amount, capped at maximum allowed discount
-    """</span>
-    <span class="p">...</span>
+    </span><span class="sh">"""</span>
+    <span class="bp">...</span>
 </code></pre></div></div>
 
 <p><strong>Semantics add:</strong></p>
@@ -93,10 +95,10 @@ Code without docstrings says <em>“WHAT”</em>, code with docstrings says <em>
 
 <h4 id="modules-architectural-role"><strong>Modules: Architectural Role</strong></h4>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ❌ REPEATS SYNTAX
-</span><span class="s">"""Workflow module."""</span>
+</span><span class="sh">"""</span><span class="s">Workflow module.</span><span class="sh">"""</span>
 
 <span class="c1"># ✅ ADDS ARCHITECTURAL MEANING
-</span><span class="s">"""
+</span><span class="sh">"""</span><span class="s">
 This module orchestrates the conversational flow for debt negotiation.
 
 Architecture:
@@ -119,7 +121,7 @@ Boundaries:
 
 Entry:
     - process_message: Main public function called by API routes
-"""</span>
+</span><span class="sh">"""</span>
 </code></pre></div></div>
 
 <p><strong>Semantics explain:</strong></p>
@@ -135,14 +137,14 @@ Entry:
 <h4 id="functions-context-and-intention"><strong>Functions: Context and Intention</strong></h4>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ❌ REPEATS SYNTAX
 </span><span class="k">def</span> <span class="nf">_validate_and_extract_payload</span><span class="p">(</span><span class="n">payload</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="bp">None</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="bp">None</span><span class="p">]:</span>
-    <span class="s">"""Validates payload and extracts data."""</span>
-    <span class="p">...</span>
+    <span class="sh">"""</span><span class="s">Validates payload and extracts data.</span><span class="sh">"""</span>
+    <span class="bp">...</span>
 
 <span class="c1"># ✅ ADDS CONTEXT AND INTENTION
 </span><span class="k">def</span> <span class="nf">_validate_and_extract_payload</span><span class="p">(</span>
     <span class="n">payload</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="bp">None</span><span class="p">,</span> <span class="nb">str</span> <span class="o">|</span> <span class="bp">None</span><span class="p">]:</span>
-    <span class="s">"""
+    <span class="sh">"""</span><span class="s">
     Validates incoming payload and extracts essential conversation data.
 
     Responsibility:
@@ -155,7 +157,7 @@ Entry:
 
     Args:
         payload: Dictionary from external API
-                 Expected structure: {'text': str, 'chat_session_id'?: str, 'chat_user_id'?: str}
+                 Expected structure: {</span><span class="sh">'</span><span class="s">text</span><span class="sh">'</span><span class="s">: str, </span><span class="sh">'</span><span class="s">chat_session_id</span><span class="sh">'</span><span class="s">?: str, </span><span class="sh">'</span><span class="s">chat_user_id</span><span class="sh">'</span><span class="s">?: str}
 
     Returns:
         (user_message, chat_session_id, chat_user_id)
@@ -164,9 +166,9 @@ Entry:
         - user_id: None if anonymous
 
     Raises:
-        ValueError: If 'text' is missing — caller MUST handle to return proper error
-    """</span>
-    <span class="p">...</span>
+        ValueError: If </span><span class="sh">'</span><span class="s">text</span><span class="sh">'</span><span class="s"> is missing — caller MUST handle to return proper error
+    </span><span class="sh">"""</span>
+    <span class="bp">...</span>
 </code></pre></div></div>
 
 <p><strong>Semantics add:</strong></p>
@@ -182,11 +184,11 @@ Entry:
 <h4 id="classes-boundaries-and-role-in-the-system"><strong>Classes: Boundaries and Role in the System</strong></h4>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ❌ ONLY SYNTAX
 </span><span class="k">class</span> <span class="nc">IdentificationAgent</span><span class="p">:</span>
-    <span class="s">"""Agent for user identification."""</span>
+    <span class="sh">"""</span><span class="s">Agent for user identification.</span><span class="sh">"""</span>
 
 <span class="c1"># ✅ SEMANTIC LAYER
 </span><span class="k">class</span> <span class="nc">IdentificationAgent</span><span class="p">:</span>
-    <span class="s">"""
+    <span class="sh">"""</span><span class="s">
     Manages user identification state and conversation flow.
 
     Responsibility:
@@ -201,7 +203,7 @@ Entry:
     Role:
         State manager for user identification journey,
         bridging stateless API calls and stateful context.
-    """</span>
+    </span><span class="sh">"""</span>
 </code></pre></div></div>
 
 <p><strong>Semantics explain:</strong></p>
@@ -215,7 +217,7 @@ Entry:
 
 <h3 id="applied-pattern-complete-structure">Applied Pattern: Complete Structure</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"""
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">"""</span><span class="s">
 [MODULE PURPOSE: 1–2 sentences explaining why this module exists]
 
 Architecture:
@@ -234,10 +236,10 @@ Boundaries:
 
 Entry:
     - [public_function: Brief description]
-"""</span>
+</span><span class="sh">"""</span>
 
 <span class="k">class</span> <span class="nc">ExampleClass</span><span class="p">:</span>
-    <span class="s">"""
+    <span class="sh">"""</span><span class="s">
     [CLASS PURPOSE: 1–2 sentences]
 
     Responsibility:
@@ -255,10 +257,10 @@ Entry:
 
     Methods:
         method1(): [What it does]
-    """</span>
+    </span><span class="sh">"""</span>
 
 <span class="k">def</span> <span class="nf">public_function</span><span class="p">(</span><span class="n">arg1</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">arg2</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-    <span class="s">"""
+    <span class="sh">"""</span><span class="s">
     [One-line summary]
 
     Responsibility:
@@ -279,7 +281,7 @@ Entry:
 
     Note:
         [Important details or gotchas]
-    """</span>
+    </span><span class="sh">"""</span>
 </code></pre></div></div>
 
 <hr />
@@ -291,9 +293,9 @@ Entry:
 </span><span class="n">user</span><span class="p">:</span> <span class="n">User</span><span class="p">,</span> <span class="n">amount</span><span class="p">:</span> <span class="n">Decimal</span> <span class="o">-&gt;</span> <span class="n">Decimal</span>
 
 <span class="c1"># Semantics says WHY:
-</span><span class="n">user</span><span class="p">:</span> <span class="s">"for loyalty tier determination"</span>
-<span class="n">amount</span><span class="p">:</span> <span class="s">"for volume-based calculation"</span>
-<span class="k">return</span><span class="p">:</span> <span class="s">"final discount with cap"</span>
+</span><span class="n">user</span><span class="p">:</span> <span class="sh">"</span><span class="s">for loyalty tier determination</span><span class="sh">"</span>
+<span class="n">amount</span><span class="p">:</span> <span class="sh">"</span><span class="s">for volume-based calculation</span><span class="sh">"</span>
+<span class="k">return</span><span class="p">:</span> <span class="sh">"</span><span class="s">final discount with cap</span><span class="sh">"</span>
 </code></pre></div></div>
 
 <h4 id="2-code-changes-meaning-remains">2. <strong>Code Changes, Meaning Remains</strong></h4>
@@ -304,10 +306,10 @@ Entry:
 </ul>
 
 <h4 id="3-prevents-semantic-coupling">3. <strong>Prevents Semantic Coupling</strong></h4>
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"""
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sh">"""</span><span class="s">
 Boundaries:
     - Manage MCP connections (delegated to execution helpers)
-"""</span>
+</span><span class="sh">"""</span>
 </code></pre></div></div>
 <p>→ Defines conceptual boundaries, not just technical ones</p>
 
@@ -392,7 +394,7 @@ Boundaries:
           <li class="p-name">Davi Guides</li></ul>
       </div>
 
-      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/daviguides"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">daviguides</span></a></li><li><a href="https://www.linkedin.com/in/daviguides"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">daviguides</span></a></li></ul>
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
 </div>
 
       <div class="footer-col footer-col-3">
@@ -400,6 +402,7 @@ Boundaries:
       </div>
     </div>
   </div>
-</footer></body>
+</footer>
+</body>
 
 </html>
