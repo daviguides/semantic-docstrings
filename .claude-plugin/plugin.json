@@ -2,7 +2,10 @@
   "name": "semantic-docstrings",
   "version": "1.0.0",
   "description": "Semantic documentation standard for Python with context-aware docstring keys",
-  "author": "Davi Luiz Guides",
+  "author": {
+      "name": "Davi Guides",
+      "url": "https://github.com/daviguides"
+  },
   "repository": "https://github.com/daviguides/semantic-docstrings",
   "license": "MIT"
 }
