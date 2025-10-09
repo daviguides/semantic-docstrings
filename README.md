@@ -28,7 +28,7 @@ This repository serves a **dual purpose**:
 ### One-Line Installation (Claude Code Plugin)
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/daviguides/semantic-docstrings/main/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/daviguides/semantic-docstrings/main/install.sh)"
 ```
 
 The installer will:

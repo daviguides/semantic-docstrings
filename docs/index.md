@@ -16,7 +16,7 @@ Semantic Docstrings add a semantic layer to Python documentation:
 ### One-Line Installation (Claude Code Plugin)
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/daviguides/semantic-docstrings/main/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/daviguides/semantic-docstrings/main/install.sh)"
 ```
 
 ## Read the Docs
