@@ -71,7 +71,36 @@ def process_message(payload: dict) -> str:
 
 ### As a Claude Code Plugin
 
-Once installed, you can reference Semantic Docstrings globally in your `CLAUDE.md`:
+Once installed, you can use Semantic Docstrings in three ways:
+
+#### **Option 1: Slash Commands (Recommended for Sessions)**
+
+Load semantic docstring context for your current session:
+
+```bash
+/load-semantic-context
+```
+
+**Available Commands:**
+- `/load-semantic-context` - Load complete semantic docstring standards
+- `/add-module-docstring` - Add semantic docstring to current module
+- `/add-class-docstring` - Add semantic docstring to a class
+- `/add-function-docstring` - Add semantic docstring to a function
+- `/validate-docstrings` - Validate docstrings in current project
+
+#### **Option 2: Global CLAUDE.md (Automatic)**
+
+Reference in your `~/.claude/CLAUDE.md` for automatic loading:
+
+```markdown
+# Documentation Standards
+
+@~/.claude/semantic-docstrings/context/semantic-guidelines.md
+```
+
+#### **Option 3: Project CLAUDE.md (Project-Specific)**
+
+Reference in your project's `CLAUDE.md`:
 
 ```markdown
 # Project Documentation Standards
@@ -81,6 +110,13 @@ Once installed, you can reference Semantic Docstrings globally in your `CLAUDE.m
 - **PRECEDENCE**: Project overrides semantic-docstrings
 - **FALLBACK**: Use semantic-docstrings when no overrides exist
 ```
+
+### Specialized Agents
+
+The plugin includes specialized agents that activate automatically:
+
+- **documentation-specialist** - Generates semantic docstrings following best practices
+- **docstring-reviewer** - Reviews docstrings for semantic quality and completeness
 
 ---
 
