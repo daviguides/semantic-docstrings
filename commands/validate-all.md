@@ -12,4 +12,4 @@ Este comando vai:
 
 ---
 
-@./../prompts/validate_semantic_documentation.md
+`${CLAUDE_PLUGIN_ROOT}/prompts/validate_semantic_documentation.md`
