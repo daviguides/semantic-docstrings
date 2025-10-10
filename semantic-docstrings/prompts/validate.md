@@ -12,7 +12,7 @@ Este prompt instrui um LLM a validar e aplicar o **Princípio 6: Documentação 
 
 ```
 Você deve validar e aplicar o Princípio "DOCUMENTATION AS A SEMANTIC LAYER"
-conforme definido em @/.project/docs/refact/semantic_docstrings.md
+conforme definido em @~/.claude/semantic-docstrings/semantic_docstrings.md
 
 Execute as seguintes etapas em ordem:
 
