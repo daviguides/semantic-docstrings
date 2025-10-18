@@ -58,21 +58,40 @@ ls -la semantic-docstrings/
 
 ### Core Components
 
-**semantic-docstrings/** - The plugin content directory
-- `semantic_docstrings.md` - Full specification of semantic docstring keys
+**semantic-docstrings/** - The plugin content directory organized using Gradient architecture:
+
+**semantic-docstrings/spec/** - Normative specifications (single source of truth)
+- `semantic-keys-spec.md` - Definitions of all semantic keys (Architecture, Responsibility, etc.)
+- `templates-spec.md` - Normative templates for module/class/function docstrings
+- `anti-patterns-spec.md` - Rules and anti-patterns to avoid
+- `validation-spec.md` - Quality checklists and validation criteria
 - This is the **primary source of truth** for the standard
-- Gets copied to `~/.claude/semantic-docstrings/` during installation
-- Referenced by projects via `@./semantic-docstrings/semantic_docstrings.md`
+
+**semantic-docstrings/context/** - Applied guidance and examples
+- `patterns.md` - Usage patterns for different scenarios (orchestrators, adapters, etc.)
+- `examples.md` - Complete concrete examples demonstrating best practices
+- `quick-reference.md` - Condensed quick reference for developers
+
+**semantic-docstrings/prompts/** - Validation and application workflows
+- `validate.md` - Orchestrates validation workflow across Python files
+
+**commands/** - Thin wrappers (≤10 lines each) that reference specs
+- `load-semantic-context.md` - Load semantic docstring standards for session
+- `add-module-docstring.md` - Generate module docstring
+- `add-class-docstring.md` - Generate class docstring
+- `add-function-docstring.md` - Generate function docstring
+- `validate-docstrings.md` - Validate project docstrings
+- `resume.md` - Summarize concept with example
+
+**agents/** - Specialized documentation agents
+- `documentation-specialist.md` - Agent for generating semantic docstrings
+- `docstring-reviewer.md` - Agent for reviewing docstring quality
 
 **examples/** - Python code examples demonstrating the standard
 - `module_example.py` - Module-level semantic docstrings
 - `function_example.py` - Function-level semantic docstrings
 - `class_example.py` - Class-level semantic docstrings
 - These show **practical application** of the standard
-
-**cheatsheet/** - Quick reference guide
-- `semantic_docstrings_cheatsheet.md` - Condensed reference for developers
-- Summarizes all semantic keys with minimal examples
 
 **docs/** - Jekyll documentation site
 - `_pages/semantic_docstrings.md` - Main specification page
@@ -96,16 +115,21 @@ ls -la semantic-docstrings/
 ### Key Architectural Principles
 
 **Separation of Concerns:**
-- **Specification** (`semantic-docstrings/semantic_docstrings.md`) defines the standard
-- **Examples** (`examples/`) demonstrate practical usage
+- **Specifications** (`semantic-docstrings/spec/`) define the normative standard
+- **Context** (`semantic-docstrings/context/`) provides applied guidance and examples
+- **Prompts** (`semantic-docstrings/prompts/`) orchestrate workflows
+- **Commands** (`commands/`) provide thin wrappers referencing specs
+- **Agents** (`agents/`) specialize in documentation generation
+- **Examples** (`examples/`) demonstrate practical usage in Python
 - **Documentation** (`docs/`) explains rationale and guides adoption
 - **Installation** (`install.sh`) handles distribution
 
 **Distribution Strategy:**
 The plugin uses a **copy-based installation model** rather than direct repository reference:
-- Users install via `install.sh` which copies files to `~/.claude/`
-- Projects reference the installed plugin via `@./semantic-docstrings/semantic_docstrings.md`
-- This ensures version stability and offline availability
+- Users install via `install.sh` which copies `semantic-docstrings/` directory to `~/.claude/`
+- Projects reference installed specs via `@~/.claude/semantic-docstrings/spec/semantic-keys-spec.md`
+- Commands use thin wrappers (≤10 lines) that reference specs instead of duplicating content
+- This ensures version stability, offline availability, and follows Gradient anti-duplication principles
 
 **Semantic Keys Philosophy:**
 The standard adds a **semantic layer** over Python's syntactic layer:

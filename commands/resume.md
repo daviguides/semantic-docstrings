@@ -1,9 +1,11 @@
 ---
-description: Resume
+description: Resume semantic docstrings concept
 ---
 
-Resuma em um paragrafo o que é o conceito abaixo:
+Summarize the semantic docstrings concept in one paragraph:
 
-@~/.claude/semantic-docstrings/semantic_docstrings.md
+@~/.claude/semantic-docstrings/spec/semantic-keys-spec.md
 
-Me de um exemplo para um módulo python
+Then provide an example for a Python module using the template from:
+
+@~/.claude/semantic-docstrings/spec/templates-spec.md

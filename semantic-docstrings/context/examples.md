@@ -3,6 +3,11 @@
 This document contains comprehensive examples demonstrating semantic docstrings
 at module, class, and function levels.
 
+**Specifications**:
+- @~/.claude/semantic-docstrings/spec/semantic-keys-spec.md
+- @~/.claude/semantic-docstrings/spec/templates-spec.md
+- @~/.claude/semantic-docstrings/spec/anti-patterns-spec.md
+
 ---
 
 ## Module Example

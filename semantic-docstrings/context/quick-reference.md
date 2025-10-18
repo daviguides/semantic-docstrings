@@ -3,6 +3,8 @@
 Minimal one-word keys for context-enriched docstrings.
 Aligned with Google Style, but adds semantic anchors for LLMs and developers.
 
+**Specifications**: @~/.claude/semantic-docstrings/spec/semantic-keys-spec.md
+
 ---
 
 ## 📦 Modules

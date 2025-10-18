@@ -1,3 +1,7 @@
+---
+description: Validate semantic docstrings in current project
+---
+
 # Validate Semantic Documentation
 
 Execute o prompt de validação e aplicação do **Princípio 6: Documentação como Camada Semântica** em todos os arquivos Python do projeto.
