@@ -6,11 +6,32 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Semantic Docstrings** is a documentation standard and Claude Code plugin that extends traditional Python docstrings with semantic meaning. It clarifies **Responsibility, Context, and Intent** through one-word keys (e.g., `Responsibility`, `Context`, `Role`, `Boundaries`, `Architecture`, `Should`, `Entry`).
+**Semantic Docstrings** is a documentation standard that extends traditional Python docstrings with semantic meaning. It clarifies **Responsibility, Context, and Intent** through one-word keys (e.g., `Responsibility`, `Context`, `Role`, `Boundaries`, `Architecture`, `Should`, `Entry`).
 
-This repository serves dual purposes:
-1. **Specification**: Readable documentation standard for Python projects
-2. **Claude Code Plugin**: Installable plugin that encourages this documentation style
+### Three-in-One Bundle
+
+This repository follows the **Gradient architecture pattern** and serves three distinct functions:
+
+#### 1. Architectural Specification
+- **semantic-docstrings/** - Self-contained bundle with normative specs and applied guidance
+  - `semantic-docstrings/spec/` - Normative specifications (single source of truth)
+  - `semantic-docstrings/context/` - Applied guidance, patterns, and examples
+  - `semantic-docstrings/prompts/` - Validation workflows and orchestrators
+
+#### 2. Claude Code Plugin
+- **commands/** - Slash commands (thin wrappers that reference specs)
+- **agents/** - Specialized documentation agents
+- **.claude-plugin/** - Plugin metadata and configuration
+
+#### 3. Documentation Site (Jekyll)
+- **docs/** - Jekyll-based documentation website
+  - `_config.yml` - Jekyll configuration
+  - `_pages/` - Markdown documentation pages
+  - `_layouts/`, `_includes/`, `_sass/` - Templates and styling
+  - `_site/` - Generated static site
+  - `assets/` - CSS, images, and other assets
+
+**Plus:** `install.sh` - One-line installation script that copies the specification bundle to `~/.claude/`
 
 ---
 
@@ -56,78 +77,91 @@ ls -la semantic-docstrings/
 
 ## Repository Architecture
 
-### Core Components
+This repository implements a **Three-in-One Bundle** following the Gradient architecture pattern.
 
-**semantic-docstrings/** - The plugin content directory organized using Gradient architecture:
+### 1. Architectural Specification Bundle
 
-**semantic-docstrings/spec/** - Normative specifications (single source of truth)
+**semantic-docstrings/** - Self-contained, installable specification bundle
+
+**spec/** - Normative specifications (primary source of truth)
 - `semantic-keys-spec.md` - Definitions of all semantic keys (Architecture, Responsibility, etc.)
 - `templates-spec.md` - Normative templates for module/class/function docstrings
 - `anti-patterns-spec.md` - Rules and anti-patterns to avoid
 - `validation-spec.md` - Quality checklists and validation criteria
-- This is the **primary source of truth** for the standard
 
-**semantic-docstrings/context/** - Applied guidance and examples
+**context/** - Applied guidance and practical examples
 - `patterns.md` - Usage patterns for different scenarios (orchestrators, adapters, etc.)
 - `examples.md` - Complete concrete examples demonstrating best practices
 - `quick-reference.md` - Condensed quick reference for developers
 
-**semantic-docstrings/prompts/** - Validation and application workflows
+**prompts/** - Workflows and orchestrators
 - `validate.md` - Orchestrates validation workflow across Python files
 
-**commands/** - Thin wrappers (≤10 lines each) that reference specs
+### 2. Claude Code Plugin
+
+**commands/** - Slash commands (thin wrappers ≤10 lines that reference specs)
 - `load-semantic-context.md` - Load semantic docstring standards for session
 - `add-module-docstring.md` - Generate module docstring
 - `add-class-docstring.md` - Generate class docstring
 - `add-function-docstring.md` - Generate function docstring
 - `validate-docstrings.md` - Validate project docstrings
+- `validate-all.md` - Comprehensive validation workflow
 - `resume.md` - Summarize concept with example
 
 **agents/** - Specialized documentation agents
 - `documentation-specialist.md` - Agent for generating semantic docstrings
 - `docstring-reviewer.md` - Agent for reviewing docstring quality
 
-**examples/** - Python code examples demonstrating the standard
-- `module_example.py` - Module-level semantic docstrings
-- `function_example.py` - Function-level semantic docstrings
-- `class_example.py` - Class-level semantic docstrings
-- These show **practical application** of the standard
+**.claude-plugin/** - Plugin metadata
+- `plugin.json` - Plugin configuration (name, version, description, author, license)
 
-**docs/** - Jekyll documentation site
+### 3. Documentation Site (Jekyll)
+
+**docs/** - Jekyll-based public documentation
+- `_config.yml` - Jekyll configuration
 - `_pages/semantic_docstrings.md` - Main specification page
 - `_pages/why_semantic_docstrings.md` - Rationale and philosophy
 - `index.md` - Landing page
-- Site configuration: `_config.yml`, `Gemfile`
+- `_layouts/`, `_includes/`, `_sass/` - Templates and styling
+- `assets/` - CSS, images, and other static assets
+
+### Distribution & Meta
 
 **install.sh** - One-line installation script
 - Clones the repository to `/tmp`
-- Copies `semantic-docstrings/` directory to `~/.claude/`
+- Copies `semantic-docstrings/` bundle to `~/.claude/`
 - Optionally configures `~/.claude/CLAUDE.md`
 - Handles existing installations with prompts
 - Cleans up temporary files automatically
 
-**PLUGIN_STRUCTURE_GUIDE.md** - Comprehensive guide for plugin architecture
+**PLUGIN_STRUCTURE_GUIDE.md** - Plugin architecture documentation
 - Documents Claude Code plugin structure requirements
 - Explains context loading strategies (commands, agents, hooks)
 - Contains templates for creating plugins
-- Critical reference for plugin development
+- Critical reference for plugin development following Gradient pattern
 
 ### Key Architectural Principles
 
-**Separation of Concerns:**
-- **Specifications** (`semantic-docstrings/spec/`) define the normative standard
-- **Context** (`semantic-docstrings/context/`) provides applied guidance and examples
-- **Prompts** (`semantic-docstrings/prompts/`) orchestrate workflows
-- **Commands** (`commands/`) provide thin wrappers referencing specs
-- **Agents** (`agents/`) specialize in documentation generation
-- **Examples** (`examples/`) demonstrate practical usage in Python
-- **Documentation** (`docs/`) explains rationale and guides adoption
-- **Installation** (`install.sh`) handles distribution
+**Three-Layer Separation (Gradient Pattern):**
+
+*Bundle Layer* - Architectural specification
+- **Specifications** (`semantic-docstrings/spec/`) - Normative standard (source of truth)
+- **Context** (`semantic-docstrings/context/`) - Applied guidance and examples
+- **Prompts** (`semantic-docstrings/prompts/`) - Orchestration workflows
+
+*Plugin Layer* - Claude Code integration
+- **Commands** (`commands/`) - Thin wrappers (≤10 lines) referencing specs
+- **Agents** (`agents/`) - Specialized documentation agents
+- **Metadata** (`.claude-plugin/`) - Plugin configuration
+
+*Documentation Layer* - Public communication
+- **Site** (`docs/`) - Jekyll site explaining rationale and guiding adoption
+- **Distribution** (`install.sh`) - Installation and setup automation
 
 **Distribution Strategy:**
 The plugin uses a **copy-based installation model** rather than direct repository reference:
 - Users install via `install.sh` which copies `semantic-docstrings/` directory to `~/.claude/`
-- Projects reference installed specs via `@~/.claude/semantic-docstrings/spec/semantic-keys-spec.md`
+- Projects reference installed specs via `@./semantic-docstrings/spec/semantic-keys-spec.md`
 - Commands use thin wrappers (≤10 lines) that reference specs instead of duplicating content
 - This ensures version stability, offline availability, and follows Gradient anti-duplication principles
 
@@ -171,16 +205,20 @@ When creating or modifying examples, documentation, or the specification itself,
 
 ### When Creating Examples
 
-- Examples in `examples/` MUST demonstrate the full semantic docstring pattern
+- Examples in documentation MUST demonstrate the full semantic docstring pattern
 - Use realistic scenarios (not trivial "hello world" examples)
 - Show domain context (e.g., "debt negotiation", "user identification")
 - Demonstrate **why** semantic keys add value over basic docstrings
 
 ### When Updating Specification
 
-- Primary spec: `semantic-docstrings/semantic_docstrings.md`
+- Primary specifications are in `semantic-docstrings/spec/`:
+  - `semantic-keys-spec.md` - Definitions of all semantic keys
+  - `templates-spec.md` - Normative templates for docstrings
+  - `anti-patterns-spec.md` - Rules and anti-patterns to avoid
+  - `validation-spec.md` - Quality checklists and validation criteria
 - Keep examples consistent across all documentation files
-- Update the cheatsheet if adding new semantic keys
+- Update context files in `semantic-docstrings/context/` as needed
 - Ensure Jekyll docs (`docs/_pages/`) stay synchronized
 
 ### Writing Philosophy
@@ -233,19 +271,6 @@ This repository follows Claude Code plugin conventions documented in `PLUGIN_STR
 
 ---
 
-## Git Workflow
-
-Current branch: **main**
-
-Untracked file: `PLUGIN_STRUCTURE_GUIDE.md` (documentation, should be committed)
-
-When making commits:
-- Use descriptive commit messages explaining WHY changes were made
-- Group related changes (e.g., "Update specification and examples together")
-- Tag releases using semantic versioning (e.g., `v0.1.0`, `v1.0.0`)
-
----
-
 ## Design Philosophy: Syntax vs Semantics
 
 Core insight: **Code without docstrings says "WHAT", code with semantic docstrings says "WHY"**
@@ -291,10 +316,10 @@ This semantic layer:
 
 When proposing changes:
 
-1. **Specification changes**: Update `semantic-docstrings/semantic_docstrings.md` first
-2. **Example changes**: Ensure examples clearly demonstrate the value of semantic keys
-3. **Documentation**: Keep `docs/` synchronized with specification
-4. **Installation**: Test `install.sh` on clean systems before committing
-5. **Cheatsheet**: Update if adding/modifying semantic keys
+1. **Specification changes**: Update files in `semantic-docstrings/spec/` first (semantic-keys-spec.md, templates-spec.md, etc.)
+2. **Context changes**: Update applied guidance in `semantic-docstrings/context/` (patterns.md, examples.md, quick-reference.md)
+3. **Example changes**: Ensure examples in context files clearly demonstrate the value of semantic keys
+4. **Documentation**: Keep `docs/` synchronized with specification
+5. **Installation**: Test `install.sh` on clean systems before committing
 
 Maintain consistency across all representations of the standard.

@@ -95,7 +95,7 @@ Reference in your `~/.claude/CLAUDE.md` for automatic loading:
 ```markdown
 # Documentation Standards
 
-@~/.claude/semantic-docstrings/context/semantic-guidelines.md
+@./semantic-docstrings/context/semantic-guidelines.md
 ```
 
 #### **Option 3: Project CLAUDE.md (Project-Specific)**
