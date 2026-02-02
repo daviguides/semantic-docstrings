@@ -3,7 +3,7 @@
 This document provides **applied guidance** on when and how to use semantic docstrings
 in different scenarios.
 
-**Specifications**: @./semantic-docstrings/spec/semantic-keys-spec.md
+**Specifications**: @~/.claude/semantic-docstrings/spec/semantic-keys-spec.md
 
 ---
 
@@ -503,8 +503,8 @@ def calculate_discount(amount: Decimal) -> Decimal:
 ## Reference
 
 This document provides applied patterns. For:
-- Semantic key definitions → @./semantic-docstrings/spec/semantic-keys-spec.md
-- Normative templates → @./semantic-docstrings/spec/templates-spec.md
-- Anti-patterns to avoid → @./semantic-docstrings/spec/anti-patterns-spec.md
-- Concrete examples → @./semantic-docstrings/context/examples.md
-- Quick reference → @./semantic-docstrings/context/quick-reference.md
+- Semantic key definitions → @~/.claude/semantic-docstrings/spec/semantic-keys-spec.md
+- Normative templates → @~/.claude/semantic-docstrings/spec/templates-spec.md
+- Anti-patterns to avoid → @~/.claude/semantic-docstrings/spec/anti-patterns-spec.md
+- Concrete examples → @~/.claude/semantic-docstrings/context/examples.md
+- Quick reference → @~/.claude/semantic-docstrings/context/quick-reference.md

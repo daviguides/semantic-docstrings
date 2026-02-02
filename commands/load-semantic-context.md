@@ -22,6 +22,6 @@ description: Load semantic docstring standards for this session
 
 ---
 
-@./semantic-docstrings/spec/semantic-keys-spec.md
-@./semantic-docstrings/spec/templates-spec.md
-@./semantic-docstrings/context/patterns.md
+@~/.claude/semantic-docstrings/spec/semantic-keys-spec.md
+@~/.claude/semantic-docstrings/spec/templates-spec.md
+@~/.claude/semantic-docstrings/context/patterns.md

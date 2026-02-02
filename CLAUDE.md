@@ -161,7 +161,7 @@ This repository implements a **Three-in-One Bundle** following the Gradient arch
 **Distribution Strategy:**
 The plugin uses a **copy-based installation model** rather than direct repository reference:
 - Users install via `install.sh` which copies `semantic-docstrings/` directory to `~/.claude/`
-- Projects reference installed specs via `@./semantic-docstrings/spec/semantic-keys-spec.md`
+- Projects reference installed specs via `@~/.claude/semantic-docstrings/spec/semantic-keys-spec.md`
 - Commands use thin wrappers (≤10 lines) that reference specs instead of duplicating content
 - This ensures version stability, offline availability, and follows Gradient anti-duplication principles
 

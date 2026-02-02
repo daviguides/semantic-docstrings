@@ -3,9 +3,9 @@
 Validate and apply semantic docstrings standard to all Python files in current project.
 
 **Specifications**:
-- @./semantic-docstrings/spec/validation-spec.md
-- @./semantic-docstrings/spec/semantic-keys-spec.md
-- @./semantic-docstrings/spec/templates-spec.md
+- @~/.claude/semantic-docstrings/spec/validation-spec.md
+- @~/.claude/semantic-docstrings/spec/semantic-keys-spec.md
+- @~/.claude/semantic-docstrings/spec/templates-spec.md
 
 ---
 

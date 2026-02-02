@@ -4,8 +4,8 @@ description: Resume semantic docstrings concept
 
 Summarize the semantic docstrings concept in one paragraph:
 
-@./semantic-docstrings/spec/semantic-keys-spec.md
+@~/.claude/semantic-docstrings/spec/semantic-keys-spec.md
 
 Then provide an example for a Python module using the template from:
 
-@./semantic-docstrings/spec/templates-spec.md
+@~/.claude/semantic-docstrings/spec/templates-spec.md

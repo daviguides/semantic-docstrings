@@ -32,7 +32,7 @@ Add this to `~/.claude/CLAUDE.md`:
 # Project Documentation Standards
 
 ## Standards Inheritance
-- **INHERITS FROM**: @./semantic-docstrings/docs/semantic_docstrings.md
+- **INHERITS FROM**: @~/.claude/semantic-docstrings/docs/semantic_docstrings.md
 - **PRECEDENCE**: Project-specific rules override repository defaults
 - **FALLBACK**: When no override exists, semantic-docstrings applies
 ```

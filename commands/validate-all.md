@@ -16,4 +16,4 @@ Este comando vai:
 
 ---
 
-@./semantic-docstrings/prompts/validate.md
+@~/.claude/semantic-docstrings/prompts/validate.md

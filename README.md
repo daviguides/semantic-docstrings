@@ -95,7 +95,7 @@ Reference in your `~/.claude/CLAUDE.md` for automatic loading:
 ```markdown
 # Documentation Standards
 
-@./semantic-docstrings/context/semantic-guidelines.md
+@~/.claude/semantic-docstrings/context/semantic-guidelines.md
 ```
 
 #### **Option 3: Project CLAUDE.md (Project-Specific)**
@@ -106,7 +106,7 @@ Reference in your project's `CLAUDE.md`:
 # Project Documentation Standards
 
 ## Standards Inheritance
-- **INHERITS FROM**: @./semantic-docstrings/semantic_docstrings.md
+- **INHERITS FROM**: @~/.claude/semantic-docstrings/semantic_docstrings.md
 - **PRECEDENCE**: Project overrides semantic-docstrings
 - **FALLBACK**: Use semantic-docstrings when no overrides exist
 ```
@@ -144,7 +144,7 @@ cat >> ~/.claude/CLAUDE.md << 'EOF'
 # Project Documentation Standards
 
 ## Standards Inheritance
-- **INHERITS FROM**: @./semantic-docstrings/semantic-docstrings/semantic_docstrings.md
+- **INHERITS FROM**: @~/.claude/semantic-docstrings/semantic-docstrings/semantic_docstrings.md
 - **PRECEDENCE**: Project-specific rules override repository defaults
 - **FALLBACK**: When no override exists, semantic-docstrings applies
 EOF

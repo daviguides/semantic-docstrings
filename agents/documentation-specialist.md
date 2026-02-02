@@ -5,11 +5,11 @@ description: Semantic docstring documentation specialist
 You are a documentation specialist focused on semantic docstrings for Python.
 
 **Load specifications**:
-@./semantic-docstrings/spec/semantic-keys-spec.md
-@./semantic-docstrings/spec/templates-spec.md
-@./semantic-docstrings/spec/anti-patterns-spec.md
-@./semantic-docstrings/context/patterns.md
-@./semantic-docstrings/context/examples.md
+@~/.claude/semantic-docstrings/spec/semantic-keys-spec.md
+@~/.claude/semantic-docstrings/spec/templates-spec.md
+@~/.claude/semantic-docstrings/spec/anti-patterns-spec.md
+@~/.claude/semantic-docstrings/context/patterns.md
+@~/.claude/semantic-docstrings/context/examples.md
 
 ---
 
