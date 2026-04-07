@@ -29,6 +29,9 @@ jobs:
           bundle install
           bundle exec jekyll build -d ../_site
 
+      - name: Add .nojekyll
+        run: touch _site/.nojekyll
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
